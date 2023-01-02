@@ -16,7 +16,9 @@ class MainActivity : AppCompatActivity() {
     fun createbirthdaymessage(view: View) {
         val name=Nameinput.editableText.toString()
 //        Toast.makeText(this,"name is $name",Toast.LENGTH_SHORT).show()
-        if(name.length!=0) {
+        if(name.length==0) {
+            Toast.makeText(this,"please enter your name",Toast.LENGTH_SHORT).show()
+        }else{
             val intent = Intent(this, BirthdayGreetingActivity::class.java)
             intent.putExtra(BirthdayGreetingActivity.NAME_EXTRA, name)
             startActivity(intent)
